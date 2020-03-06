@@ -1,0 +1,14 @@
+[
+    {
+        "name": "CS5014 Classification",
+        "submissions": 5,
+        "ground_truth": "c1.txt",
+        "type": "classification"
+    },
+    {
+        "name": "CS5014 Regression",
+        "submissions": 5,
+        "ground_truth": "r1.txt",
+        "type": "regression"
+    }
+]

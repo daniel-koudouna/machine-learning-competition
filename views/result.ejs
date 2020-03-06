@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Result</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <link rel="stylesheet"
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <style>
+  html{
+   padding:50px;
+  }
+   body { text-align: center; }
+ </style>
+</head>
+<body>
+ <div class="container">
+     <h1>Leaderboard - <%= title %></h1> <br>
+     <form action="profile" method="post" enctype="multipart/form-data">
+     <input type="submit" formaction="/backProfile" value="Go back to profile">
+     </form>
+     <div class="row">
+       <div class="col-sm-12">
+         <table class="table">
+           <thead>
+             <tr>
+               <th class="text-center" scope="col">Rank</th>
+               <th class="text-center" scope="col">Username</th>
+               <th class="text-center" scope="col"><%= metric %></th>
+             </tr>
+           </thead>
+           <tbody>
+             <% for (let i=0; i<result.length; i++) {%>
+                <tr class="<%=(result[i].user_id == user.username) ? 'table-success' : '' %>">
+                  <th class="text-center" scope="row"><%= i+1 %></th>
+                  <td><%= result[i].user_id %></td>
+                  <td><%= result[i].max_score %></td>
+                </tr>
+                <% } %>
+           </tbody>
+         </table>
+       </div>
+     </div>
+ </div>
+</body>
+</html>

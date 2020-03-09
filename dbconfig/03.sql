@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `competition`.`submissions` (
+CREATE TABLE IF NOT EXISTS `__DB`.`submissions` (
   `user_id` VARCHAR(45) NOT NULL,
   `task_id` VARCHAR(80) NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -11,11 +11,11 @@ CREATE TABLE IF NOT EXISTS `competition`.`submissions` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   CONSTRAINT `user_id`
     FOREIGN KEY (`user_id`)
-    REFERENCES `competition`.`users` (`username`)
+    REFERENCES `__DB`.`users` (`username`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `task_id`
     FOREIGN KEY (`task_id`)
-    REFERENCES `competition`.`tasks` (`name`)
+    REFERENCES `__DB`.`tasks` (`name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);

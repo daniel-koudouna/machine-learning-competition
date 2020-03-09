@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `competition`.`users` (
+CREATE TABLE IF NOT EXISTS `__DB`.`users` (
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(255) NULL,
   `email` VARCHAR(45) NULL,

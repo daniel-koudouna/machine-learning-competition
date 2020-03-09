@@ -30,6 +30,7 @@ function readFiles(dirname) {
 const dbconfigpath = path.resolve(__dirname, "../dbconfig/");
 let allfiles = readFiles(dbconfigpath);
 allfiles.forEach(file => {
+    file = file.split("__DB").join(dbconfig.database);
     pool.query(file, (err, res) => {
         if (err) {
             console.log(err);

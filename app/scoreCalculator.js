@@ -1,5 +1,5 @@
 /**
- * Accuracy calculator module, exports the accuracy with (100 - error)%
+ * Accuracy calculator module
  */
 let fs = require('fs');
 
